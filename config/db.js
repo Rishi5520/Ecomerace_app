@@ -13,3 +13,35 @@ const connectDB = async () => {
 };
 
 export default connectDB;
+
+// import mysql from 'mysql';
+// import dotenv from 'dotenv';
+
+// // Load environment variables from .env file
+// dotenv.config();
+
+// const connection = mysql.createConnection({
+//   host: process.env.DB_HOST,
+//   user: process.env.DB_USER,
+//   password: process.env.DB_Password,
+//   database: process.env.DB_NAME
+// });
+
+// // Connect to the database
+// connection.connect((err) => {
+//   if (err) {
+//     console.error('Error connecting to MySQL database: ' + err.stack);
+//     return;
+//   }
+//   console.log('Connected to MySQL database as id ' + connection.threadId);
+// });
+
+// // Test query
+// connection.query('SELECT 1+1 AS solution', (err, rows, fields) => {
+//   if (err) {
+//     console.log(err);
+//   }
+//   console.log('The solution is: ', rows[0].solution);
+// });
+
+// connection;

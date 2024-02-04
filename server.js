@@ -1,6 +1,5 @@
 import express from "express";
 import colors from "colors";
-import dotenv from "dotenv";
 import morgan from "morgan";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoute.js";
@@ -9,12 +8,18 @@ import productRoutes from "./routes/productRoutes.js";
 import cors from "cors";
 import path from 'path';
 import { fileURLToPath } from 'url';
+// import connection from "./config/db.js";
 
+import mysql from 'mysql';
+import dotenv from 'dotenv';
 //configure env
 dotenv.config();
 
 //databse config
 connectDB();
+
+// //mySql DB Connections
+// connection();
 
 //rest object
 const app = express();
@@ -41,6 +46,10 @@ app.use('*',function (request,response) {
 //   res.send("<h1>Welcome to ecommerce app</h1>");
 // });
 
+
+
+// Load environment variables from .env file
+dotenv.config();
 //PORT
 const PORT = process.env.PORT || 8080;
 
